@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Medical Cost Prediction</h1>
+            <h3>Predict The Cost for your Medical Insurance</h3>
+            <h2>Age</h2>
+            <input id="first" name="Age"placeholder="age" type="number ">
+            <h2>Gender</h2><br><input id="second" name="Gender" placeholder="0 - Male/1 - Female" type="text"required="required">
+               
+            <h2>BMI</h2><input id="third" placeholder="BMI" type="text"required="required">
+            <h2>Childrens</h2><br><input type="text" id="fourth"placeholder="eg:- 0 for none" required="required">
+            <h2>Do You Smoke</h2><br><select id="smoke" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>  
+            </select>
+            <h2>Which Region</h2><br><select name="Which Region" type="number" id="region" required="required">
+                <option value="NorthWest">NorthWest</option>
+                <option value="SouthWest">SouthWest</option>
+                <option value="NorthEast">NorthEast</option>
+                <option value="SouthEast">SouthEast</option>         
+            </select>
+            <br><br><button id="sub" type="submit ">Predict Probablity</button>
+            <br>
+
+        </form>
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+    <style>
+        body {
+            background-color:DodgerBlue ;
+            text-align: center;
+            padding: 0px;
+           
+        } 
+        #smoke {
+            width: 70px;
+            height: 28px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+        
+        #smoke:hover {
+            background-color: grey;
+        }
+           
+        #region {
+            width: 110px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+        
+        #region:hover {
+            background-color: grey;
+        }
+        
+        #sub {
+            width: 145px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 16px;
+        }
+        
+        #sub:hover {
+            background-color: grey;
+        }
+       
+        
+        #first {
+            border-radius: 14px;
+            height: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+      
+    </style>
+</body>
+
+</html>
